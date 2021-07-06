@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr'>
+	<head>
+		<meta charset="=utf-8">
+		<title>Heart Disease Prediction</title>
+	</head>
+
+	<body>
+		<div class="container main">
+			<br>
+				<center><b><h2 style="color:#FF0000";>{{ prediction_text}}</h2></b></center>
+			<br>
+			<br>
+				<center><h1 class="main_heading">Heart Disease Prediction Model</h1></center>
+			<p>This Web Based Application is based on a Machine Learning Algorithm that predicts a patient's chance of having a heart failure or not.</p>
+			<br>
+			<div class="instructions">
+				<h2>Instructions: </h2>
+				<p>1. Please enter values for the following fields</p>
+				<p>2. Click predict</p>
+			</div>
+			<form class="form-horizontal" action="{{ url_for('predict')}}"method="post">
+				<div class="form-group">
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="age" placeholder="Age" required="required" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="resting_blood_pressure" placeholder="Blood Pressure" required="required" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="cholesterol" placeholder="Cholesterol" required="required" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="fasting_blood_sugar" placeholder="Blood Sugar" required="required" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="max_heart_rate" placeholder="Heart rate" required="required" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="exercise_angina" placeholder="Exercise Angina" required="required" />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<input class="form-control" type="text" name="st_depression" placeholder="st_depression" required="required" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="s_female">sex</label>
+					<select class="form-control" id="s_female">
+						<option>male</option>
+						<option>female</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="pain_atypical_angina">Chest Pain</label>
+					<select class="form-control" id="pain_atypical_angina">
+						<option>typical_angina</option>
+						<option>atypical_angina</option>
+						<option>nonangnal_pain</option>
+						<option>asymptomatic</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="rest_left_ventricular_hypertrophy">rest_ecg</label>
+					<select class="form-control" id="rest_left_ventricular_hypertrophy">
+						<option>normal</option>
+						<option>ST_T_wave_abnormality</option>
+						<option>left_ventricular_hypertrophy</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="slope_flat">st_slope</label>
+					<select class="form-control" id="slope_flat">
+						<option>upsloping</option>
+						<option>flat</option>
+						<option>downsloping</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<center><button type="submit" class="button btn btn-default">PREDICT</button></center>
+					</div>
+				</div>
+			</form>
+			<h2 class="result"></h2>
+		</div>
+		</div>
+	</body>
+</html>
